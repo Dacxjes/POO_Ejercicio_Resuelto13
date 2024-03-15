@@ -1,0 +1,44 @@
+
+package poo_promocion_ejercicio_resuelto13;
+
+import java.util.Scanner;
+
+public class POO_Promocion_Ejercicio_Resuelto13 {
+
+    public static void main(String[] args) {
+        Scanner promocion = new Scanner(System.in);
+        
+        double descuento, valor_apagar, valor_compra;
+        String color;
+        
+        System.out.println("Ingrese el valor de la compra: ");
+        valor_compra = promocion.nextDouble();
+        System.out.println("Ingrese el color de la bolita: ");
+        color = promocion.next();
+        
+        if (color.equals("blanco")){
+            descuento = 0;
+        } else {
+            if (color.equals("verde")) {
+                descuento = 0.10;
+            } else {
+                if (color.equals("amarillo")) {
+                    descuento = 0.25;
+                } else {
+                    if (color.equals("azul")) {
+                        descuento = 0.50;
+                    } else {
+                        descuento = 1;
+                    }
+                }
+            }
+        }
+        
+        valor_apagar = valor_compra - (descuento * valor_compra);
+        
+        System.out.println("El cliente debe pagar: " + valor_apagar + " pesos");
+        
+        promocion.close();
+    }
+}
+
